@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "830282321482",
+    "project_id": "hoja-614e8",
+    "storage_bucket": "hoja-614e8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:830282321482:android:7b7955454ebfb99fbd60b3",
+        "android_client_info": {
+          "package_name": "com.example.firebaseauthentication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "830282321482-su0f8hpb49n049gu2gnmnq0m89rjc2v4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVro7On-NUfHszw4IWqPH1I_0UtyPr4BI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "830282321482-su0f8hpb49n049gu2gnmnq0m89rjc2v4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
