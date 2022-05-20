@@ -6,8 +6,6 @@ import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.preference.PreferenceManager
-import android.view.View
-import android.widget.Button
 import android.widget.Toast
 import androidx.cardview.widget.CardView
 import com.google.android.gms.auth.api.signin.GoogleSignIn
@@ -18,7 +16,6 @@ import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
-
 
 
 class loginscreen : AppCompatActivity() {
@@ -40,14 +37,11 @@ class loginscreen : AppCompatActivity() {
         mGoogleSignInClient= GoogleSignIn.getClient(this,gso)
     // initialize the firebaseAuth variable
         firebaseAuth= FirebaseAuth.getInstance()
-    //        val Signin: Button=findViewById(R.id.Signin);
         val Signin: CardView = findViewById(R.id.Signin);
-
           Signin.setOnClickListener {
               Toast.makeText(this,"Logging In", Toast.LENGTH_SHORT).show()
               signInGoogle()
           }
-
     }
     private  fun signInGoogle(){
         val signInIntent: Intent = mGoogleSignInClient.signInIntent
