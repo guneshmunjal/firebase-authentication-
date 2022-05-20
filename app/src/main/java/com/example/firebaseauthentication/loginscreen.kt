@@ -9,6 +9,7 @@ import android.preference.PreferenceManager
 import android.view.View
 import android.widget.Button
 import android.widget.Toast
+import androidx.cardview.widget.CardView
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -29,28 +30,27 @@ class loginscreen : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_loginscreen)
-
         //
 
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestIdToken(getString(R.string.default_id))
             .requestEmail()
             .build()
-// getting the value of gso inside the GoogleSigninClient
+    // getting the value of gso inside the GoogleSigninClient
         mGoogleSignInClient= GoogleSignIn.getClient(this,gso)
-// initialize the firebaseAuth variable
+    // initialize the firebaseAuth variable
         firebaseAuth= FirebaseAuth.getInstance()
-        val Signin: Button=findViewById(R.id.Signin);
+    //        val Signin: Button=findViewById(R.id.Signin);
+        val Signin: CardView = findViewById(R.id.Signin);
 
-            { view: View? ->
-                Toast.makeText(this,"Logging In", Toast.LENGTH_SHORT).show()
-                signInGoogle()
-        }
+          Signin.setOnClickListener {
+              Toast.makeText(this,"Logging In", Toast.LENGTH_SHORT).show()
+              signInGoogle()
+          }
 
     }
     private  fun signInGoogle(){
-
-        val signInIntent: Intent =mGoogleSignInClient.signInIntent
+        val signInIntent: Intent = mGoogleSignInClient.signInIntent
         startActivityForResult(signInIntent,Req_Code)
     }
     // onActivityResult() function : this is where we provide the task and data for the Google Account
@@ -91,6 +91,7 @@ class loginscreen : AppCompatActivity() {
             finish()
         }
     }
+
     object SavedPreference {
 
         const val EMAIL= "email"
@@ -131,7 +132,6 @@ class loginscreen : AppCompatActivity() {
         )?.getString(USERNAME,"")
 
     }
-
 }
 
 
